@@ -1,0 +1,22 @@
+{% extends "templates.html" %}
+{% block content %}
+<h1 class="titless">Add new Grades</h1>
+<form action = "http://127.0.0.1:5000/add" method="POST">
+    <!-- <label for ="name">Note ID</label>
+    <input type ="text" id="Note_ID" name = "Note_ID"> -->
+    
+    <label for ="mail">Title</label>
+    <input type ="text" id="title" name = "Title">
+
+    <label for ="content">Content</label>
+    <textarea id="text" name="Content"></textarea>
+
+    <label for ="YourId">Student Id</label>
+    <input type ="number" id="yourid" name = "Your_ID">
+
+    <button type="submit">Submit</button>
+    
+    
+    
+</form>
+{% endblock content %}

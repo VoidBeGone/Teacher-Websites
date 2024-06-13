@@ -1,0 +1,39 @@
+{% extends "templates.html" %}
+{% block content %}
+    <h1 class="titless">
+        Grades
+    </h1>
+    <div class="going_button_container">
+    </div>
+    {% if session['role'] == 'teacher' %}
+    <a href="/add" class="going_button">Add New Grades</a>
+    <form action="http://127.0.0.1:5000/notes" method="POST">
+        <label for="Content">Change Grade</label>
+        <textarea id="text" name="Content"></textarea>
+        <label for="Grade_id">Grade ID</label>
+        <input type="text" id="Grade_id" name="Grade_id">
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+    <br>
+    <div class="table_notes">
+        <table class="my_table">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Date Posted</th>
+                <th>Content</th>
+                <th>Person ID</th>
+            </tr>
+            {% for note in query_notes_result %}
+            <tr>
+                <td>{{ note.id }}</td>
+                <td>{{ note.title }}</td>
+                <td>{{ note.date_posted }}</td>
+                <td>{{ note.content }}</td>
+                <td>{{ note.person_id }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock content %}

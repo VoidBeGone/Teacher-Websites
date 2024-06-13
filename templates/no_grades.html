@@ -1,0 +1,9 @@
+{% extends "templates.html" %}
+{% block content %}
+    {% if session['role'] == 'student' %}
+        <h1>sorry you currently have no assignment</h1>
+        {% endif %}
+    {% if session['role'] == 'guest' %}
+        <h1> please sign in</h1>
+    {% endif %}
+{% endblock content %}

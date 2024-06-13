@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Website</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+    {% if title %}
+        <title>{{ pagename }}</title>
+    {% else %}
+        <title>CSCB20</title>
+    {% endif %}
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="menu-toggle-checkbox">
+        <label for="menu-toggle-checkbox" id="menu-toggle">Menu</label>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="login">login</a></li>
+                <li><a href="register">Register</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li><a href="notes">Notes</a></li>
+                <li><a href="https://piazza.com" target="blank" >Piazza</a></li>
+                <li><a href="https://markus2.utsc.utoronto.ca/" target="blank">Markus</a></li>
+                <li><a href="#assignments">Assignments</a></li>
+                <li><a href="#anon-feedback">Anon Feedback</a></li>
+                <li><a href="/static/content/no-links.pdf" target="blank">Syllabus</a></li>
+                <li><a href="#labs">Labs</a></li>
+                <li><a href="#courseteam">CourseTeam</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <!-- templates inheritance -->
+    <!--parent template-->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

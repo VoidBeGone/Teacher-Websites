@@ -1,0 +1,22 @@
+{% extends "templates.html" %}
+{% block content %}
+    <form action="http://127.0.0.1:5000/register" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="Username" name="Username">
+
+        <label for="email">Email</label>
+        <input type="text" id="Email" name="Email">
+
+        <label for="password">Password</label>
+        <input type="text" id="Password" name="Password">
+
+        <label for="teacher">Teacher put zero if you are a teacher</label>
+        <input type="text" id="Teacher" name ="Teacher">
+
+        <label for="Type">PLEASE type Y or N EXACTLY</label>
+        <input type="text" id="Type" name = "Type">
+
+        <button type="register">Register</button>
+    </form>
+
+{% endblock %}
